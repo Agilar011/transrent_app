@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login_page.dart';
 
 class LandingPage extends StatelessWidget {
   @override
@@ -23,8 +24,10 @@ class LandingPage extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      // Add functionality for login button
-                      // Navigator.pushNamed(context, '/login'); // Example navigation
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage()),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor:
@@ -76,7 +79,7 @@ class LandingPage extends StatelessWidget {
 
             // Container 3
             Container(
-              margin: EdgeInsets.only(top: 40),
+              margin: EdgeInsets.only(top: 60),
               child: Text(
                 'Copyright ©2023 All rights reserved | Transrent.id',
                 style: TextStyle(
