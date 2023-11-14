@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login_page.dart';
+import 'sign_in_page.dart';
 
 class LandingPage extends StatelessWidget {
   @override
@@ -60,8 +61,10 @@ class LandingPage extends StatelessWidget {
                   SizedBox(height: 10),
                   InkWell(
                     onTap: () {
-                      // Add functionality for Daftar
-                      // Navigator.pushNamed(context, '/daftar'); // Example navigation
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignIn()),
+                      );
                     },
                     child: Text(
                       'Daftar',
