@@ -6,12 +6,12 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 250, 0, 0),
+        backgroundColor: const Color.fromARGB(255, 250, 0, 0),
         elevation: 0,
-        title: Text('My Account'),
+        title: const Text('My Account'),
         actions: [
           IconButton(
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => TransactionPage()));
@@ -49,8 +49,8 @@ class ProfilePage extends StatelessWidget {
           buildDetailsContainer(),
 
           // Expanded untuk memberikan ruang yang diperlukan
-          Expanded(
-            child: SingleChildScrollView(
+          const Expanded(
+            child: const SingleChildScrollView(
               reverse: true, // Membuat konten muncul dari bawah ke atas
               child: Column(
                 children: [

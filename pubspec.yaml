@@ -9,6 +9,7 @@ environment:
 assets:
   - assets/images/
   - assets/icons/
+  - assets/images/login.png
 
 dependencies:
   shared_preferences: ^2.0.15
