@@ -15,7 +15,7 @@ class ProfilePage extends StatelessWidget {
                 color: Colors.white,
                 border: Border.all(color: Colors.grey),
               ),
-              child: Align(
+              child: const Align(
                 alignment: Alignment.center,
                 child: Text(
                   'My Account',
@@ -31,8 +31,8 @@ class ProfilePage extends StatelessWidget {
 
             // Container 2: User Info
             Container(
-              margin: EdgeInsets.only(top: 25),
-              child: Column(
+              margin: const EdgeInsets.only(top: 25),
+              child: const Column(
                 children: [
                   CircleAvatar(
                     radius: 50,
@@ -65,12 +65,12 @@ class ProfilePage extends StatelessWidget {
           print('Edit button tapped!');
         },
         backgroundColor: Colors.red,
-        child: Icon(Icons.edit),
+        child: const Icon(Icons.edit),
       ),
 
       // Container 5: Navigation
       bottomNavigationBar: Container(
-        padding: EdgeInsets.all(15),
+        padding: const EdgeInsets.all(15),
         color: Colors.white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -120,7 +120,7 @@ class ProfilePage extends StatelessWidget {
   // Function to build Container 3: User Details
   Widget buildDetailsContainer() {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+      margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Colors.white,
@@ -147,15 +147,15 @@ class ProfilePage extends StatelessWidget {
             color: Colors.grey,
             size: 24,
           ),
-          SizedBox(width: 10),
-          VerticalDivider(
+          const SizedBox(width: 10),
+          const VerticalDivider(
             color: Colors.grey,
             width: 1,
           ), // Tambahkan garis vertikal di sini
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           Text(
             text,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.grey,
               fontFamily: 'Poppins',
               fontSize: 14,

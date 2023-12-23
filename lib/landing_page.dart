@@ -13,14 +13,14 @@ class LandingPage extends StatelessWidget {
           children: [
             // Container 1
             Container(
-              margin: EdgeInsets.only(top: 20),
+              margin: const EdgeInsets.only(top: 20),
               width: 380,
               child: Image.asset('../assets/images/logo.png'),
             ),
 
             // Container 2
             Container(
-              margin: EdgeInsets.symmetric(vertical: 20),
+              margin: const EdgeInsets.symmetric(vertical: 20),
               child: Column(
                 children: [
                   ElevatedButton(
@@ -37,8 +37,8 @@ class LandingPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.24),
+                    child: const Padding(
+                      padding: EdgeInsets.all(10.24),
                       child: Text(
                         'Login',
                         style: TextStyle(
@@ -49,8 +49,8 @@ class LandingPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     'Belum punya akun?',
                     style: TextStyle(
                       color: Colors.grey,
@@ -58,7 +58,7 @@ class LandingPage extends StatelessWidget {
                       fontSize: 12,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   InkWell(
                     onTap: () {
                       Navigator.push(
@@ -66,7 +66,7 @@ class LandingPage extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => SignIn()),
                       );
                     },
-                    child: Text(
+                    child: const Text(
                       'Daftar',
                       style: TextStyle(
                         color: Colors.red,
@@ -82,8 +82,8 @@ class LandingPage extends StatelessWidget {
 
             // Container 3
             Container(
-              margin: EdgeInsets.only(top: 60),
-              child: Text(
+              margin: const EdgeInsets.only(top: 60),
+              child: const Text(
                 'Copyright ©2023 All rights reserved | Transrent.id',
                 style: TextStyle(
                   color: Colors.grey,

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'landing_page.dart';
 
@@ -9,7 +10,7 @@ class SignIn extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           color: Colors.red,
           onPressed: () {
             Navigator.push(
@@ -26,7 +27,7 @@ class SignIn extends StatelessWidget {
           children: [
             // Container 1
             Container(
-              margin: EdgeInsets.only(top: 10),
+              margin: const EdgeInsets.only(top: 10),
               child: Center(
                 child: Container(
                   width: 200,
@@ -37,11 +38,11 @@ class SignIn extends StatelessWidget {
 
             // Container 2
             Container(
-              margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+              margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Center(
+                  const Center(
                     child: Text(
                       'Daftar akun',
                       style: TextStyle(
@@ -51,8 +52,8 @@ class SignIn extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     'Silahkan lengkapi data berikut',
                     style: TextStyle(
                       color: Colors.grey,
@@ -70,7 +71,7 @@ class SignIn extends StatelessWidget {
 
             // Container 3
             Container(
-              margin: EdgeInsets.symmetric(vertical: 10),
+              margin: const EdgeInsets.symmetric(vertical: 10),
               child: ElevatedButton(
                 onPressed: () {
                   // Add functionality for sign in button
@@ -81,9 +82,9 @@ class SignIn extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
                 ),
-                child: Text(
+                child: const Text(
                   'Submit ->',
                   style: TextStyle(
                     fontFamily: 'Poppins',
@@ -96,8 +97,8 @@ class SignIn extends StatelessWidget {
 
             // Container 4
             Container(
-              margin: EdgeInsets.only(top: 40),
-              child: Text(
+              margin: const EdgeInsets.only(top: 40),
+              child: const Text(
                 'Copyright ©2023 All rights reserved | Transrent.id',
                 style: TextStyle(
                   color: Colors.grey,
@@ -114,22 +115,22 @@ class SignIn extends StatelessWidget {
 
   Widget buildTextFieldWithIcon(IconData icon, String hintText) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
         color: Colors.grey[300],
         borderRadius: BorderRadius.circular(10),
       ),
-      padding: EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Row(
         children: [
-          Icon(icon, color: Color(0xFF37474F)),
-          SizedBox(width: 10),
+          Icon(icon, color: const Color(0xFF37474F)),
+          const SizedBox(width: 10),
           Expanded(
             child: TextFormField(
               decoration: InputDecoration(
                 hintText: hintText,
                 border: InputBorder.none,
-                hintStyle: TextStyle(
+                hintStyle: const TextStyle(
                   color: Color(0xFF37474F),
                   fontFamily: 'Poppins',
                   fontSize: 16,

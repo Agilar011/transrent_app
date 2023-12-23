@@ -9,15 +9,15 @@ class TransactionPage extends StatelessWidget {
         children: [
           // Container 1: Header
           Container(
-            padding: EdgeInsets.all(20),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.all(20),
+            decoration: const BoxDecoration(
               color: Colors.red,
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(20),
                 bottomRight: Radius.circular(20),
               ),
             ),
-            child: Align(
+            child: const Align(
               alignment: Alignment.center,
               child: Text(
                 'Transaksi',
@@ -34,9 +34,9 @@ class TransactionPage extends StatelessWidget {
           // Container 2: Recent History
           Expanded(
             child: ListView(
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
               children: [
-                Text(
+                const Text(
                   'Recent history',
                   style: TextStyle(
                     color: Color(0xFF8C8C8C),
@@ -47,7 +47,7 @@ class TransactionPage extends StatelessWidget {
                     letterSpacing: 0.40,
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
                 // Example Group Container (Replace with your dynamic data)
                 buildHistoryGroup(
@@ -65,7 +65,7 @@ class TransactionPage extends StatelessWidget {
 
           // Container 3: Navigation
           Container(
-            padding: EdgeInsets.all(15),
+            padding: const EdgeInsets.all(15),
             color: Colors.white,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -120,8 +120,8 @@ class TransactionPage extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 100,
-      margin: EdgeInsets.only(bottom: 15),
-      padding: EdgeInsets.all(15),
+      margin: const EdgeInsets.only(bottom: 15),
+      padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
@@ -130,7 +130,7 @@ class TransactionPage extends StatelessWidget {
             color: Colors.grey.withOpacity(0.5),
             spreadRadius: 1,
             blurRadius: 5,
-            offset: Offset(0, 2),
+            offset: const Offset(0, 2),
           ),
         ],
       ),
@@ -147,7 +147,7 @@ class TransactionPage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(width: 15),
+          const SizedBox(width: 15),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -155,7 +155,7 @@ class TransactionPage extends StatelessWidget {
               children: [
                 Text(
                   title!,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color(0xFFA51111),
                     fontSize: 20,
                     fontFamily: 'Work Sans',
@@ -163,10 +163,10 @@ class TransactionPage extends StatelessWidget {
                     letterSpacing: 0.40,
                   ),
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Text(
                   status!,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color(0xFFDF6F1D),
                     fontSize: 12,
                     fontFamily: 'Poppins',
@@ -180,7 +180,7 @@ class TransactionPage extends StatelessWidget {
           Text(
             amount!,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.black,
               fontSize: 16,
               fontFamily: 'Work Sans',
