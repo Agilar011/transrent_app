@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_storage/firebase_storage.dart ';
+import 'package:transrent_app/profil_page.dart';
 
 class TransactionPage extends StatelessWidget {
   @override
@@ -93,8 +95,10 @@ class TransactionPage extends StatelessWidget {
                   label: 'Transaction',
                   isActive: true,
                   onTap: () {
-                    // Tambahkan fungsi yang sesuai untuk tombol Account
-                    print('Account button tapped!');
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => TransactionPage()));
                   },
                 ),
                 buildNavButton(
@@ -102,8 +106,8 @@ class TransactionPage extends StatelessWidget {
                   label: 'Account',
                   isActive: false,
                   onTap: () {
-                    // Tambahkan fungsi yang sesuai untuk tombol Account
-                    print('Account button tapped!');
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ProfilePage()));
                   },
                 ),
               ],

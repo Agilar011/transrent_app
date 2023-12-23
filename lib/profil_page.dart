@@ -1,61 +1,65 @@
 import 'package:flutter/material.dart';
+import 'package:transrent_app/transaction_page.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            // Container 1: Header
-            Container(
-              height: 80,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(color: Colors.grey),
-              ),
-              child: const Align(
-                alignment: Alignment.center,
-                child: Text(
-                  'My Account',
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 250, 0, 0),
+        elevation: 0,
+        title: Text('My Account'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => TransactionPage()));
+            },
+          ),
+        ],
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          // Container 2: User Info
+          Container(
+            margin: const EdgeInsets.only(top: 25),
+            child: const Column(
+              children: [
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage: AssetImage('assets/images/profile.jpg'),
+                ),
+                SizedBox(height: 10),
+                Text(
+                  'Nama Pengguna',
                   style: TextStyle(
                     color: Colors.black,
-                    fontFamily: 'Poppins',
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Noto Sans',
+                    fontSize: 24,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
-              ),
+              ],
             ),
+          ),
 
-            // Container 2: User Info
-            Container(
-              margin: const EdgeInsets.only(top: 25),
-              child: const Column(
+          // Container 3: User Details
+          buildDetailsContainer(),
+
+          // Expanded untuk memberikan ruang yang diperlukan
+          Expanded(
+            child: SingleChildScrollView(
+              reverse: true, // Membuat konten muncul dari bawah ke atas
+              child: Column(
                 children: [
-                  CircleAvatar(
-                    radius: 50,
-                    backgroundImage: AssetImage('assets/images/profile.jpg'),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    'Nama Pengguna',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'Noto Sans',
-                      fontSize: 24,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
+                  // ... (Tambahkan konten lainnya di sini)
                 ],
               ),
             ),
-
-            // Container 3: User Details
-            buildDetailsContainer(),
-          ],
-        ),
+          ),
+        ],
       ),
 
       // Container 4: Edit Button
@@ -66,53 +70,6 @@ class ProfilePage extends StatelessWidget {
         },
         backgroundColor: Colors.red,
         child: const Icon(Icons.edit),
-      ),
-
-      // Container 5: Navigation
-      bottomNavigationBar: Container(
-        padding: const EdgeInsets.all(15),
-        color: Colors.white,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            buildNavButton(
-              icon: Icons.home,
-              label: 'Home',
-              isActive: false,
-              onTap: () {
-                // Tambahkan fungsi yang sesuai untuk tombol Home
-                print('Home button tapped!');
-              },
-            ),
-            buildNavButton(
-              icon: Icons.location_on,
-              label: 'Vehicle',
-              isActive: false,
-              onTap: () {
-                // Tambahkan fungsi yang sesuai untuk tombol Vehicle
-                print('Vehicle button tapped!');
-              },
-            ),
-            buildNavButton(
-              icon: Icons.assignment,
-              label: 'Transaction',
-              isActive: false,
-              onTap: () {
-                // Tambahkan fungsi yang sesuai untuk tombol Transaction
-                print('Transaction button tapped!');
-              },
-            ),
-            buildNavButton(
-              icon: Icons.account_circle,
-              label: 'Account',
-              isActive: true,
-              onTap: () {
-                // Tambahkan fungsi yang sesuai untuk tombol Account
-                print('Account button tapped!');
-              },
-            ),
-          ],
-        ),
       ),
     );
   }
@@ -160,35 +117,6 @@ class ProfilePage extends StatelessWidget {
               fontFamily: 'Poppins',
               fontSize: 14,
               fontWeight: FontWeight.w500,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  // Function to build a navigation button
-  Widget buildNavButton({
-    required IconData icon,
-    required String label,
-    required bool isActive,
-    required VoidCallback onTap,
-  }) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Column(
-        children: [
-          Icon(
-            icon,
-            color: isActive ? Colors.red : Colors.grey,
-            size: 30,
-          ),
-          Text(
-            label,
-            style: TextStyle(
-              color: isActive ? Colors.red : Colors.grey,
-              fontSize: 12,
-              fontFamily: 'Poppins',
             ),
           ),
         ],
